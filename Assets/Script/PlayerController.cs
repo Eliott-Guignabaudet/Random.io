@@ -5,5 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int level;
+    public TextMesh textMesh;
 
+    private void Start()
+    {
+        textMesh.text = level.ToString();
+    }
 }
