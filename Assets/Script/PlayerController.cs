@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour
         isDragged = false;
     }
 
-
+    public void AddPoint(int levelAdd)
+    {
+        level += levelAdd;
+        textMesh.text = level.ToString();
+    }
 
 }

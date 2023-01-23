@@ -24,6 +24,7 @@ public class TestRoom : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log("test");
         if (collision.CompareTag("Player"))
         {
             PlayerController playerController = collision.GetComponent<PlayerController>();
