@@ -23,11 +23,12 @@ public class RoomController : MonoBehaviour
         {
             for (int i = 0; i < ennemyController.Length; i++)
             {
-                Debug.Log("Oui");
+                Debug.Log(ennemyController[i].levelEnnemy);
+
                 if (playerController.level > ennemyController[i].levelEnnemy)
                 {
                     _newLevel = playerController.level + ennemyController[i].levelEnnemy;
-                    playerController.textMesh.text = _newLevel.ToString();
+                    playerController.textMeshPro.text = _newLevel.ToString();
                     playerController.level = _newLevel;
                     Destroy(ennemyController[i].gameObject); // Remplacer par une animation plus tard 
                 }

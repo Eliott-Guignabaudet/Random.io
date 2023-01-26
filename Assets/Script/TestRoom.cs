@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-<<<<<<< HEAD
-=======
-using Unity.VisualScripting;
->>>>>>> 5da9f10ef42fd16ebed43f6b50fe8895372c724c
 using UnityEngine;
 
 public class TestRoom : MonoBehaviour
 {
     [SerializeField]
     Transform _playerPosition;
+    
+    [SerializeField]
+    Transform _ennemyPosition1;
+    [SerializeField]
+    Transform _ennemyPosition2;
 
     [SerializeField]
     Color _baseColor;
@@ -17,20 +18,22 @@ public class TestRoom : MonoBehaviour
     [SerializeField]
     Color _enterColor;
 
-<<<<<<< HEAD
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            GetComponent<SpriteRenderer>().color = _enterColor;
-=======
+    [SerializeField]
     private bool playerInRoom;
     public GameObject player;
+    public EnnemyController[] ennemyController;
 
+    private bool isFighting;
     private void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        isFighting= false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        ennemyController[0].transform.position = _ennemyPosition1.position;
+        if (ennemyController.Length > 1)
+        {
+            ennemyController[0].transform.position = _ennemyPosition2.position;
+            ennemyController[1].transform.position= _ennemyPosition1.position;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,7 +42,6 @@ public class TestRoom : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = _enterColor;
             playerInRoom = true;
->>>>>>> 5da9f10ef42fd16ebed43f6b50fe8895372c724c
         }
     }
 
@@ -48,22 +50,19 @@ public class TestRoom : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerController playerController = collision.GetComponent<PlayerController>();
-<<<<<<< HEAD
-            if (!playerController.isDragged)
-=======
             if (!GameManager.instance.playerIsDragged && playerInRoom)
->>>>>>> 5da9f10ef42fd16ebed43f6b50fe8895372c724c
             {
                 collision.transform.position = _playerPosition.position;
                 GetComponent<SpriteRenderer>().color = _baseColor;
+                if (!isFighting)
+                {
+                    Fight();
+                    isFighting= true;
+                }
+                
             }
-<<<<<<< HEAD
-            else
-            {
-=======
             else 
             { 
->>>>>>> 5da9f10ef42fd16ebed43f6b50fe8895372c724c
                 GetComponent<SpriteRenderer>().color = _enterColor;
             }
         }
@@ -71,10 +70,6 @@ public class TestRoom : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-<<<<<<< HEAD
-        GetComponent<SpriteRenderer>().color = _baseColor;
-    }
-=======
         if (collision.CompareTag("Player"))
         {
             GetComponent<SpriteRenderer>().color = _baseColor;
@@ -82,6 +77,25 @@ public class TestRoom : MonoBehaviour
         }
     }
 
+    private void Fight()
+    {
+        Debug.Log(ennemyController.Length);
+        for (int i = 0; i < ennemyController.Length; i++)
+        {
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            Debug.Log(playerController.level);
+            if (playerController.level > ennemyController[i].levelEnnemy)
+            {
+                playerController.level += ennemyController[i].levelEnnemy;
+                playerController.textMeshPro.text = playerController.level.ToString();
+                Destroy(ennemyController[i].gameObject); // Remplacer par une animation plus tard 
+            }
+            else
+            {
+                Destroy(player); // peut afficher à la place la lose scène
+            }
+        }
+    }
 
->>>>>>> 5da9f10ef42fd16ebed43f6b50fe8895372c724c
+
 }
