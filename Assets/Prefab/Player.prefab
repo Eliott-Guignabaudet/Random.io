@@ -117,8 +117,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+<<<<<<< HEAD
+  textMesh: {fileID: 2846927742698685668}
+=======
   textMesh: {fileID: 0}
   textMeshPro: {fileID: 0}
+>>>>>>> 5da9f10ef42fd16ebed43f6b50fe8895372c724c
   isDragged: 0
 --- !u!50 &5402496552191509974
 Rigidbody2D:
@@ -141,7 +145,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< HEAD
+--- !u!1 &1543062684430267559
+=======
 --- !u!1 &1573802201048002903
+>>>>>>> 5da9f10ef42fd16ebed43f6b50fe8895372c724c
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
