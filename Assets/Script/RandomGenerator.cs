@@ -38,9 +38,14 @@ public class RandomGenerator : MonoBehaviour
         enemyLevels.Add(firstEnemy);
         _globalLevel += firstEnemy;
         int nextEnemy;
-        for (int i = 1; i < nbrRooms-1; i++)
+        for (int i = 1; i < nbrRooms; i++)
         {
             int minLvl = _globalLevel * 20 / 100;
+            if (i == nbrRooms - 1)
+            {
+                _bossLevel = RandomInt(minLvl, _globalLevel);
+                enemyLevels.Add(_bossLevel);
+            }
             nextEnemy = RandomInt(minLvl, _globalLevel);
             enemyLevels.Add(nextEnemy);
             _globalLevel += nextEnemy;
