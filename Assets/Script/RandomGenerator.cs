@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class RandomGenerator : MonoBehaviour
 {
     private System.Random _random = new();
     private int _minRoom = 3;
     private int _maxRoom = 21;
-    public int nbrRooms;
+    public int nbrRooms = 3;
 
     public PlayerController player = FindObjectOfType<PlayerController>();
     public EnnemyController enemy = FindObjectOfType<EnnemyController>();
+    public List<int> enemyLevels = new List<int>();
+    private int _globalLevel = 0;
+    private int _bossLevel = 0;
 
     public void GetRandomRooms()
     {
@@ -29,23 +33,29 @@ public class RandomGenerator : MonoBehaviour
     public void GenerateEnemiesLvl()
     {
         int playerLvl = player.level;
-        int globalLvl = playerLvl;
+        _globalLevel = playerLvl;
         int firstEnemy = _random.Next(player.level);
-        enemy.levelEnnemy = firstEnemy;
-        globalLvl += firstEnemy;
+        enemyLevels.Add(firstEnemy);
+        _globalLevel += firstEnemy;
         int nextEnemy;
-        for (int i = 1; i < nbrRooms; i++)
+        for (int i = 1; i < nbrRooms-1; i++)
         {
-            int minLvl = globalLvl * 20 / 100;
-            nextEnemy = RandomInt(minLvl, globalLvl);
-            //Keep nextEnemy value somewhere
-            enemy.levelEnnemy = nextEnemy;
-            globalLvl += nextEnemy;
+            int minLvl = _globalLevel * 20 / 100;
+            nextEnemy = RandomInt(minLvl, _globalLevel);
+            enemyLevels.Add(nextEnemy);
+            _globalLevel += nextEnemy;
         }
+        enemyLevels = ShuffleList(enemyLevels);
     }
 
     public int RandomInt(int min, int max)
     {
         return _random.Next(min, max);
+    }
+
+    public List<int> ShuffleList(List<int> enemyLevels)
+    {
+        List<int> shuffledEnemyLevels = new List<int>(enemyLevels.OrderBy(enemy => _random.Next()));
+        return shuffledEnemyLevels;
     }
 }

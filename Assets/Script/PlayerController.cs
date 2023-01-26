@@ -6,12 +6,6 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public int level;
-<<<<<<< HEAD
-    public TextMesh textMesh;
-    public bool isDragged = false;
-
-    Vector2 difference = Vector2.zero;
-=======
     public TextMeshProUGUI textMeshPro;
 
     public bool isDragged = false;
@@ -19,7 +13,6 @@ public class PlayerController : MonoBehaviour
     Vector2 difference = Vector2.zero;
 
     Vector2 size;
->>>>>>> 5da9f10ef42fd16ebed43f6b50fe8895372c724c
 
     private void Start()
     {
@@ -40,26 +33,6 @@ public class PlayerController : MonoBehaviour
         transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
     }
 
-<<<<<<< HEAD
-    private void OnMouseDown()
-    {
-        difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
-        isDragged = true;
-    }
-
-    private void OnMouseDrag()
-    {
-        transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
-    }
-
-    private void OnMouseUp()
-    {
-        isDragged = false;
-    }
-
-
-
-=======
     private void OnMouseUp()
     {
         GameManager.instance.playerIsDragged = false;
@@ -73,5 +46,4 @@ public class PlayerController : MonoBehaviour
         textMeshPro.text = level.ToString();
     }
 
->>>>>>> 5da9f10ef42fd16ebed43f6b50fe8895372c724c
 }
