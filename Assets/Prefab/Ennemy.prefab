@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 6242723411119950986}
   - component: {fileID: 4295922224675497225}
   - component: {fileID: 816931794958869956}
+  - component: {fileID: 2126903039}
   m_Layer: 0
   m_Name: Ennemy
   m_TagString: Untagged
@@ -130,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 2195782240266648220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8997193, y: 0.15814602, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.241964, y: 4.323448, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4900159803382147499}
@@ -178,8 +179,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.9339623, g: 0.083704144, b: 0.083704144, a: 1}
+  m_Sprite: {fileID: -7659945631384244969, guid: 8721cbbfe3ba6a8418cd21a8de3a410c, type: 3}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -202,8 +203,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.0084080985, y: -0.015762396}
+  m_Size: {x: 0.36098415, y: 0.37965}
   m_Direction: 0
 --- !u!50 &4295922224675497225
 Rigidbody2D:
@@ -240,6 +241,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelEnnemy: 5
   textMesh: {fileID: 8599108500456176939}
+--- !u!95 &2126903039
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2195782240266648220}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5cc14934b09370a4e9128a621711136f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &3979340239235760822
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -11.540009}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7565802579473746823
@@ -333,8 +354,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4.9
-  m_fontSizeBase: 4.9
+  m_fontSize: 1.5
+  m_fontSizeBase: 1.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
