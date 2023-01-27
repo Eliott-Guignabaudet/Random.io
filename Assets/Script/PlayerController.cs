@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.instance.playerIsDragged = false;
         GetComponent<CapsuleCollider2D>().size = size;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.03f);
         transform.position = lastPos;
     }
 }
