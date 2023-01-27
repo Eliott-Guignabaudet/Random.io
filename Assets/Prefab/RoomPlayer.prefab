@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2280732727814672786}
   - component: {fileID: 2280732727814672785}
   - component: {fileID: 2280732727814672784}
-  - component: {fileID: 2280732727814672799}
+  - component: {fileID: -1051399474704325728}
   m_Layer: 0
-  m_Name: Room_Eliott
+  m_Name: RoomPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,8 +32,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2280732729528822854}
-  - {fileID: 3586910879361526005}
-  - {fileID: 6506477253367164876}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -115,7 +113,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2280732727814672799
+--- !u!114 &-1051399474704325728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,17 +122,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2280732727814672798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 202e3dd37cf7f3c4dbcbe1d3ebfc83c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b0540736fc874b4cbf7de62ce3563ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPosition: {fileID: 2280732729528822854}
-  _ennemyPosition1: {fileID: 0}
-  _ennemyPosition2: {fileID: 0}
-  _baseColor: {r: 0, g: 1, b: 0, a: 0.25490198}
-  _enterColor: {r: 0, g: 1, b: 0, a: 0.78431374}
-  playerInRoom: 0
-  player: {fileID: 8100264691366611550, guid: 321288f54e087b5468c70dee633f564c, type: 3}
-  ennemyController: []
 --- !u!1 &2280732729528822853
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,66 +155,4 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2280732727814672786}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6503474246627540814
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6506477253367164876}
-  m_Layer: 0
-  m_Name: EnemeyPosition2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6506477253367164876
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6503474246627540814}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.093, y: -0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2280732727814672786}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7131612167330094512
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3586910879361526005}
-  m_Layer: 0
-  m_Name: EnemeyPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3586910879361526005
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7131612167330094512}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36, y: -0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2280732727814672786}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
