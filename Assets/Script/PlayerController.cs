@@ -10,5 +10,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         textMesh.text = level.ToString();
+   
     }
 }
