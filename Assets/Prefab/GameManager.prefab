@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079fabe1fc251514ebaa5809e34e600d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
   playerIsDragged: 0
   playerInRoom: 0
+  enemysCount: 2

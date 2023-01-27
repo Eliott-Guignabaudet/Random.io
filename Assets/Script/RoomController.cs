@@ -13,6 +13,9 @@ public class RoomController : MonoBehaviour
     Transform _ennemyPosition2;
 
     [SerializeField]
+    Animator _animator;
+
+    [SerializeField]
     Color _baseColor;
 
     [SerializeField]
@@ -43,6 +46,7 @@ public class RoomController : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = _enterColor;
             _playerInRoom = true;
+            _animator.SetTrigger("OnAttack");
         }
     }
 
@@ -99,7 +103,8 @@ public class RoomController : MonoBehaviour
             }
             else
             {
-                Destroy(player); // peut afficher à la place la lose scène
+                _animator.SetTrigger("OnDie");
+                /*Destroy(player);*/ // peut afficher à la place la lose scène
             }
         }
     }

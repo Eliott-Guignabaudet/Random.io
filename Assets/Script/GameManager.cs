@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [SerializeField]
+    Animator _animator;
     public bool playerIsDragged;
     public bool playerInRoom;
     public int enemysCount;
@@ -27,7 +29,8 @@ public class GameManager : MonoBehaviour
     {
         if (enemysCount <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            _animator.SetTrigger("OnWin");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
