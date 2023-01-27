@@ -9,7 +9,7 @@ public class EnnemyController : MonoBehaviour
     public TextMeshProUGUI textMesh;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         textMesh.text = levelEnnemy.ToString();
     }

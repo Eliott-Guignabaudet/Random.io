@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI textMeshPro;
 
     public bool isDragged = false;
+    public Vector3 lastPos;
+
+    
 
     Vector2 difference = Vector2.zero;
 
@@ -35,9 +38,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnMouseUp()
     {
-        GameManager.instance.playerIsDragged = false;
-        GetComponent<CapsuleCollider2D>().size = size;
-
+        StartCoroutine(UnDragPlayer());
     }
 
     public void AddPoint(int levelAdd)
@@ -46,4 +47,11 @@ public class PlayerController : MonoBehaviour
         textMeshPro.text = level.ToString();
     }
 
+    System.Collections.IEnumerator UnDragPlayer()
+    {
+        GameManager.instance.playerIsDragged = false;
+        GetComponent<CapsuleCollider2D>().size = size;
+        yield return new WaitForSeconds(0.1f);
+        transform.position = lastPos;
+    }
 }

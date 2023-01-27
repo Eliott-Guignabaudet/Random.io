@@ -54,6 +54,7 @@ public class TestRoom : MonoBehaviour
             {
                 collision.transform.position = _playerPosition.position;
                 GetComponent<SpriteRenderer>().color = _baseColor;
+                playerController.lastPos = _playerPosition.position;
                 if (!isFighting)
                 {
                     Fight();
@@ -61,8 +62,12 @@ public class TestRoom : MonoBehaviour
                 }
                 
             }
-            else 
+            else if(!GameManager.instance.playerIsDragged)
             { 
+                GetComponent<SpriteRenderer>().color = _baseColor;
+            }
+            else
+            {
                 GetComponent<SpriteRenderer>().color = _enterColor;
             }
         }
@@ -97,5 +102,8 @@ public class TestRoom : MonoBehaviour
         }
     }
 
-
+    private void OnMouseExit()
+    {
+        GetComponent<SpriteRenderer>().color = _baseColor;
+    }
 }
