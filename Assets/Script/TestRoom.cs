@@ -13,6 +13,9 @@ public class TestRoom : MonoBehaviour
     Transform _ennemyPosition2;
 
     [SerializeField]
+    Animator animator;
+
+    [SerializeField]
     Color _baseColor;
 
     [SerializeField]
@@ -42,6 +45,7 @@ public class TestRoom : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = _enterColor;
             playerInRoom = true;
+            animator.SetTrigger("OnAttack");
         }
     }
 
