@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3734662310229265283}
+  - component: {fileID: 4341398384797005152}
   m_Layer: 0
   m_Name: Tower-3
   m_TagString: Untagged
@@ -63,6 +64,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4341398384797005152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119087475606654331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69aadb6f8d12cf47962f474403beebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rooms:
+  - {fileID: 6229318629206742183}
+  - {fileID: 7318832189918473686}
+  - {fileID: 6024087259792773066}
 --- !u!1 &249930228346778387
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +213,7 @@ MonoBehaviour:
   _playerInRoom: 0
   player: {fileID: 0}
   ennemyController: []
-  floor: 0
+  floor: 1
 --- !u!1 &277646387877552227
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,7 +963,7 @@ MonoBehaviour:
   _playerInRoom: 0
   player: {fileID: 0}
   ennemyController: []
-  floor: 0
+  floor: 2
 --- !u!1 &4268207041532787705
 GameObject:
   m_ObjectHideFlags: 0

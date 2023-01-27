@@ -183,7 +183,7 @@ MonoBehaviour:
   _playerInRoom: 0
   player: {fileID: 0}
   ennemyController: []
-  floor: 0
+  floor: 2
 --- !u!1 &451461741830489632
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   _playerInRoom: 0
   player: {fileID: 0}
   ennemyController: []
-  floor: 0
+  floor: 1
 --- !u!1 &876034627582445439
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +968,7 @@ MonoBehaviour:
   _playerInRoom: 0
   player: {fileID: 0}
   ennemyController: []
-  floor: 0
+  floor: 3
 --- !u!1 &4021658435479459627
 GameObject:
   m_ObjectHideFlags: 0
