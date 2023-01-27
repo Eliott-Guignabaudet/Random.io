@@ -9,8 +9,6 @@ public class RoomController : MonoBehaviour
     
     [SerializeField]
     Transform _ennemyPosition1;
-    [SerializeField]
-    Transform _ennemyPosition2;
 
     [SerializeField]
     Color _baseColor;
@@ -30,11 +28,11 @@ public class RoomController : MonoBehaviour
         _isFighting= false;
         player = GameObject.FindGameObjectWithTag("Player");
         ennemyController[0].transform.position = _ennemyPosition1.position;
-        if (ennemyController.Length > 1)
+        /*if (ennemyController.Length > 1)
         {
             ennemyController[0].transform.position = _ennemyPosition2.position;
             ennemyController[1].transform.position= _ennemyPosition1.position;
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
