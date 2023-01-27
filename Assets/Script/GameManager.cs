@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         if (enemysCount <= 0)
         {
             _animator.SetTrigger("OnWin");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
